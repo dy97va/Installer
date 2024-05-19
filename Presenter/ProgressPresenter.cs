@@ -4,13 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Installer.Model
+namespace Installer.Presenter
 {
-    public class Installer
+    internal class ProgressPresenter
     {
-       // public void CopyFiles (string )
-        //{
-
-      //  }
     }
 }

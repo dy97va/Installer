@@ -13,10 +13,10 @@
     <Compile Update="View\WelcomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Presenter\InstallationDirectoryView.xaml.cs">
+    <Compile Update="View\InstallationDirectoryView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Presenter\ProgressView.xaml.cs">
+    <Compile Update="View\ProgressView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>

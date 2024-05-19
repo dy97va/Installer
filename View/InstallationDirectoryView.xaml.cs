@@ -1,8 +1,5 @@
-﻿using System;
-using System.IO;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Forms;
 
 namespace Installer.View
 {
@@ -37,7 +34,9 @@ namespace Installer.View
                 return;
             }
 
-            var progressView = new ProgressView(_mainFrame, targetDirectory);
+            // Pass a source directory string instead of _mainFrame
+            string sourceDirectory = @"C:\Users\dy97v\Desktop\folder\Files"; // Replace with actual source directory
+            var progressView = new ProgressView(sourceDirectory, targetDirectory);
             _mainFrame.Navigate(progressView);
             progressView.StartInstallation();
         }
