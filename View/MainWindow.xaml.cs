@@ -1,6 +1,5 @@
 ﻿using Installer.View;
 using System.Windows;
-using System;
 
 namespace Installer
 {

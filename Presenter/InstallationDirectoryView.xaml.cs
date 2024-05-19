@@ -37,7 +37,6 @@ namespace Installer.View
                 return;
             }
 
-            // Navigate to ProgressView and start the installation process
             var progressView = new ProgressView(_mainFrame, targetDirectory);
             _mainFrame.Navigate(progressView);
             progressView.StartInstallation();

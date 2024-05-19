@@ -10,7 +10,7 @@
     <Compile Update="InstallationCompleteView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Presenter\WelcomeView.xaml.cs">
+    <Compile Update="View\WelcomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Presenter\InstallationDirectoryView.xaml.cs">

@@ -22,22 +22,19 @@ namespace Installer.View
 
         public void StartInstallation()
         {
-            // Set up timer for UI updates
             _timer = new DispatcherTimer();
             _timer.Interval = TimeSpan.FromMilliseconds(100);
             _timer.Tick += UpdateProgress;
             _timer.Start();
 
-            // Simulate file copy process
-            string sourceDirectory = @"C:\Users\dy97v\Desktop\folder\Files"; // Replace with actual source directory
+            string sourceDirectory = @"C:\Users\dy97v\Desktop\folder\Files";
             _files = Directory.GetFiles(sourceDirectory, "*.*", SearchOption.AllDirectories);
             _currentFileIndex = 0;
 
-            // Start copying files
-            CopyNextFile();
+            CopyFile();
         }
 
-        private void CopyNextFile()
+        private void CopyFile()
         {
             if (_currentFileIndex >= _files.Length)
             {
@@ -67,7 +64,7 @@ namespace Installer.View
                 // Copy next file
                 if (_currentFileIndex < _files.Length)
                 {
-                    CopyNextFile();
+                    CopyFile();
                 }
             }
         }
