@@ -1,11 +1,21 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using Installer.Presenter;
 
 namespace Installer.View
 {
-    public partial class InstallationDirectoryView : System.Windows.Controls.UserControl
+    public interface IInstallationDirectoryView
+    {
+        void SetDirectoryPath(string path);
+        string GetDirectoryPath();
+        void ShowMessage(string message);
+        void NavigateToProgressView(string sourceDirectory, string targetDirectory);
+    }
+
+    public partial class InstallationDirectoryView : System.Windows.Controls.UserControl, IInstallationDirectoryView
     {
         private Frame _mainFrame;
+        private InstallationDirectoryPresenter _presenter;
 
         public InstallationDirectoryView() : this(null) { }
 
@@ -13,33 +23,41 @@ namespace Installer.View
         {
             InitializeComponent();
             _mainFrame = mainFrame;
+            _presenter = new InstallationDirectoryPresenter(this);
         }
 
-        private void PathSelectorClicked(object sender, RoutedEventArgs e)
+        public void SetDirectoryPath(string path)
         {
-            var dialog = new FolderBrowserDialog();
-            var result = dialog.ShowDialog();
-            if (result == DialogResult.OK)
-            {
-                DirectoryTextBox.Text = dialog.SelectedPath;
-            }
+            DirectoryTextBox.Text = path;
         }
 
-        private void ConfirmInstallationButtonClicked(object sender, RoutedEventArgs e)
+        public string GetDirectoryPath()
         {
-            string targetDirectory = DirectoryTextBox.Text;
-            if (string.IsNullOrEmpty(targetDirectory))
-            {
-                System.Windows.MessageBox.Show("Please select an installation directory.");
-                return;
-            }
+            return DirectoryTextBox.Text;
+        }
 
-            // Pass a source directory string instead of _mainFrame
-            string sourceDirectory = @"C:\Users\dy97v\Desktop\folder\Files"; // Replace with actual source directory
+        public void ShowMessage(string message)
+        {
+            System.Windows.MessageBox.Show(message);
+        }
+
+        public void NavigateToProgressView(string sourceDirectory, string targetDirectory)
+        {
             var progressView = new ProgressView(sourceDirectory, targetDirectory);
             _mainFrame.Navigate(progressView);
             progressView.StartInstallation();
         }
+
+        private void PathSelectorClicked(object sender, RoutedEventArgs e)
+        {
+            _presenter.SelectPath();
+        }
+
+        private void ConfirmInstallationButtonClicked(object sender, RoutedEventArgs e)
+        {
+            _presenter.ConfirmInstallation();
+        }
     }
 }
+
 

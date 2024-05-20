@@ -1,34 +1,38 @@
-﻿using Installer.Model;
+﻿using Installer.Presenter;
 using System.Windows.Controls;
 
 namespace Installer.View
 {
-    public partial class ProgressView : System.Windows.Controls.UserControl
+    public interface IProgressView
     {
-        private InstallationModel _installationModel;
+        void UpdateProgress(double progress);
+        void CompleteInstallation();
+    }
+
+    public partial class ProgressView : System.Windows.Controls.UserControl, IProgressView
+    {
+        private ProgressPresenter _presenter;
 
         public ProgressView(string sourceDirectory, string targetDirectory)
         {
             InitializeComponent();
-            _installationModel = new InstallationModel(sourceDirectory, targetDirectory);
-            _installationModel.InstallationComplete += InstallationCompleteHandler;
-            _installationModel.ProgressUpdate += ProgressUpdateHandler;
+            _presenter = new ProgressPresenter(this, sourceDirectory, targetDirectory);
         }
 
         public async void StartInstallation()
         {
-            await _installationModel.CopyNextFileAsync();
+            await _presenter.StartInstallationAsync();
         }
 
-        private void ProgressUpdateHandler(object sender, EventArgs e)
+        public void UpdateProgress(double progress)
         {
-            ProgressBar.Value = _installationModel.Progress;
-            ProgressText.Text = $"Installation Progress: {_installationModel.Progress:F2}%";
+            ProgressBar.Value = progress; // Update the progress bar value.
+            ProgressText.Text = $"Installation Progress: {progress:F2}%"; // Update the progress text.
         }
 
-        private void InstallationCompleteHandler(object sender, EventArgs e)
+        public void CompleteInstallation()
         {
-            ProgressText.Text = "Installation Complete!";
+            ProgressText.Text = "Installation Complete!"; // Display completion message.
         }
     }
 }
