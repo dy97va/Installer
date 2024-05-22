@@ -1,5 +1,6 @@
 ﻿using Installer.Presenter;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace Installer.View
 {
@@ -13,10 +14,10 @@ namespace Installer.View
     {
         private ProgressPresenter _presenter;
 
-        public ProgressView(string sourceDirectory, string targetDirectory)
+        public ProgressView(string targetDirectory)
         {
             InitializeComponent();
-            _presenter = new ProgressPresenter(this, sourceDirectory, targetDirectory);
+            _presenter = new ProgressPresenter(this, targetDirectory);
         }
 
         public async void StartInstallation()
@@ -26,13 +27,20 @@ namespace Installer.View
 
         public void UpdateProgress(double progress)
         {
-            ProgressBar.Value = progress; // Update the progress bar value.
-            ProgressText.Text = $"Installation Progress: {progress:F2}%"; // Update the progress text.
+            ProgressBar.Value = progress;
+            ProgressText.Text = $"Installation Progress: {progress:F2}%";
         }
 
         public void CompleteInstallation()
         {
-            ProgressText.Text = "Installation Complete!"; // Display completion message.
+            ProgressText.Text = "Installation Complete!";
+            DoneButton.Visibility = Visibility.Visible;
+        }
+
+        public void DoneButtonClicked(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
         }
     }
 }
+

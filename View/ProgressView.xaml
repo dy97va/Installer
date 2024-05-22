@@ -6,9 +6,59 @@
              xmlns:local="clr-namespace:Installer.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style x:Key="ProgressBarStyle" TargetType="ProgressBar">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="ProgressBar">
+                        <Grid>
+                            <Border Background="{TemplateBinding Background}" 
+                                    BorderBrush="{TemplateBinding BorderBrush}" 
+                                    BorderThickness="1" 
+                                    CornerRadius="5">
+                                <Grid ClipToBounds="True">
+                                    <Rectangle x:Name="PART_Track" 
+                                               Fill="{TemplateBinding Background}" 
+                                               RadiusX="5" RadiusY="5"/>
+                                    <Rectangle x:Name="PART_Indicator" 
+                                               Fill="{TemplateBinding Foreground}" 
+                                               RadiusX="5" RadiusY="5"
+                                               HorizontalAlignment="Left"/>
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="White"/>
+            <Setter Property="Foreground" Value="LightGreen"/>
+            <Setter Property="Height" Value="10"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+             BorderBrush="{TemplateBinding BorderBrush}"
+             BorderThickness="{TemplateBinding BorderThickness}"
+             CornerRadius="15"
+             >
+                            <ContentPresenter  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#FF6549E9"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-        <TextBlock Name="ProgressText" Text="Installation Progress" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 20 0 0" FontSize="40"/>
-        <ProgressBar Name="ProgressBar" Width="600" Height="30" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <TextBlock Name="ProgressText" Foreground="White" Text="Installation Progress" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" FontSize="40"/>
+        <ProgressBar Name="ProgressBar" Width="600" Height="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,0" Style="{StaticResource ProgressBarStyle}"/>
+        <Button x:Name="DoneButton" Content="Done" Width="100" Height="30" Margin="0,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Center" Visibility="Hidden" Click="DoneButtonClicked" Style="{StaticResource ButtonStyle}"/>
     </Grid>
 </UserControl>
-

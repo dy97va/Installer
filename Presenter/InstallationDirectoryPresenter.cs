@@ -30,9 +30,7 @@ namespace Installer.Presenter
                 _view.ShowMessage("Please select an installation directory.");
                 return;
             }
-
-            string sourceDirectory = @"C:\Users\dy97v\Desktop\folder\Files";
-            _view.NavigateToProgressView(sourceDirectory, targetDirectory);
+            _view.NavigateToProgressView(targetDirectory);
         }
     }
 }

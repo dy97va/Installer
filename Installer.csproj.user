@@ -7,9 +7,6 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="InstallationCompleteView.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="View\WelcomeView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -21,9 +18,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="InstallationCompleteView.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="View\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

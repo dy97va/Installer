@@ -6,10 +6,51 @@
              xmlns:local="clr-namespace:Installer.View"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style x:Key="BrowseButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                             BorderBrush="{TemplateBinding BorderBrush}"
+                             BorderThickness="{TemplateBinding BorderThickness}"
+                             CornerRadius="15,0,0,15"
+                             >
+                            <ContentPresenter  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#FF6549E9"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     BorderThickness="{TemplateBinding BorderThickness}"
+                     CornerRadius="15"
+                     >
+                            <ContentPresenter  VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Background" Value="#FF6549E9"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Cursor" Value="Hand"/>
+        </Style>
+    </UserControl.Resources>
+
     <Grid>
-        <TextBlock Text="Coose a path to intall" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 20 0 0" FontSize="40"></TextBlock>
-        <TextBox Name="DirectoryTextBox" Width="400" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        <Button Content="Browse" Click="PathSelectorClicked" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center"></Button>
-        <Button Content="Confirm" Click="ConfirmInstallationButtonClicked" Width="100" Height="30" HorizontalAlignment="Right" VerticalAlignment="Center"></Button>
+        <TextBlock Text="Choose a path to install" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0 20 0 0" FontSize="40"></TextBlock>
+        <TextBox Background="#FF6549E9" Foreground="White" Name="DirectoryTextBox" Width="400" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="254,0,0,0"/>
+        <Button Content="Browse" Click="PathSelectorClicked" Width="100" Height="30" HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource BrowseButtonStyle}" Margin="154,0,0,0"></Button>
+        <Button Content="Confirm" Click="ConfirmInstallationButtonClicked" Width="100" Height="30" HorizontalAlignment="Center" VerticalAlignment="Top" Style="{StaticResource ButtonStyle}" Margin="0,291,0,0"></Button>
     </Grid>
 </UserControl>

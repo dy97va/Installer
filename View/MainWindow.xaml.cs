@@ -14,7 +14,6 @@ namespace Installer
         private void NavigateToWelcomeView()
         {
             WelcomeView welcomeView = new WelcomeView(MainFrame);
-
             MainFrame.Content = welcomeView;
         }
 

@@ -24,6 +24,4 @@ C:\Users\dy97v\Desktop\Installer\obj\Debug\net8.0-windows\View\ProgressView.g.cs
 C:\Users\dy97v\Desktop\Installer\obj\Debug\net8.0-windows\View\ProgressView.baml
 C:\Users\dy97v\Desktop\Installer\obj\Debug\net8.0-windows\View\InstallationDirectoryView.g.cs
 C:\Users\dy97v\Desktop\Installer\obj\Debug\net8.0-windows\View\InstallationDirectoryView.baml
-C:\Users\dy97v\Desktop\Installer\obj\Debug\net8.0-windows\InstallationCompleteView.g.cs
-C:\Users\dy97v\Desktop\Installer\obj\Debug\net8.0-windows\InstallationCompleteView.baml
 C:\Users\dy97v\Desktop\Installer\obj\Debug\net8.0-windows\Installer.sourcelink.json

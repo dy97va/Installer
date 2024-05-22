@@ -9,7 +9,7 @@ namespace Installer.View
         void SetDirectoryPath(string path);
         string GetDirectoryPath();
         void ShowMessage(string message);
-        void NavigateToProgressView(string sourceDirectory, string targetDirectory);
+        void NavigateToProgressView(string targetDirectory);
     }
 
     public partial class InstallationDirectoryView : System.Windows.Controls.UserControl, IInstallationDirectoryView
@@ -41,9 +41,9 @@ namespace Installer.View
             System.Windows.MessageBox.Show(message);
         }
 
-        public void NavigateToProgressView(string sourceDirectory, string targetDirectory)
+        public void NavigateToProgressView(string targetDirectory)
         {
-            var progressView = new ProgressView(sourceDirectory, targetDirectory);
+            var progressView = new ProgressView(targetDirectory);
             _mainFrame.Navigate(progressView);
             progressView.StartInstallation();
         }

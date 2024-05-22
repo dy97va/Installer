@@ -1,7 +1,5 @@
 ﻿using Installer.Model;
 using Installer.View;
-using System;
-using System.Threading.Tasks;
 
 namespace Installer.Presenter
 {
@@ -10,10 +8,10 @@ namespace Installer.Presenter
         private readonly IProgressView _view;
         private readonly InstallationModel _model;
 
-        public ProgressPresenter(IProgressView view, string sourceDirectory, string targetDirectory)
+        public ProgressPresenter(IProgressView view, string targetDirectory)
         {
             _view = view;
-            _model = new InstallationModel(sourceDirectory, targetDirectory);
+            _model = new InstallationModel(targetDirectory);
             _model.InstallationComplete += OnInstallationComplete;
             _model.ProgressUpdate += OnProgressUpdate;
         }
