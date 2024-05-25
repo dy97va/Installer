@@ -9,7 +9,7 @@ namespace Installer.View
         private Frame _mainFrame;
         private InstallationDirectoryPresenter _presenter;
 
-        public InstallationDirectoryView() : this(null) { }
+        //public InstallationDirectoryView() : this(null) { }
 
         public InstallationDirectoryView(Frame mainFrame)
         {

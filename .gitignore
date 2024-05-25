@@ -4,4 +4,6 @@
 *.vs/
 .vscode/
 .vs/
+.obj/
+.bin/
 !/.vs/Installer/DesignTimeBuild/
