@@ -5,9 +5,9 @@ namespace Installer.Presenter
 {
     public class InstallationDirectoryPresenter
     {
-        private readonly IInstallationDirectoryView _view;
+        private readonly InstallationDirectoryView _view;
 
-        public InstallationDirectoryPresenter(IInstallationDirectoryView view)
+        public InstallationDirectoryPresenter(InstallationDirectoryView view)
         {
             _view = view;
         }

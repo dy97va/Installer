@@ -5,10 +5,10 @@ namespace Installer.Presenter
 {
     public class ProgressPresenter
     {
-        private readonly IProgressView _view;
+        private readonly ProgressView _view;
         private readonly InstallationModel _model;
 
-        public ProgressPresenter(IProgressView view, string targetDirectory)
+        public ProgressPresenter(ProgressView view, string targetDirectory)
         {
             _view = view;
             _model = new InstallationModel(targetDirectory);

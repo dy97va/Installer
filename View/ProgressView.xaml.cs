@@ -1,16 +1,10 @@
 ﻿using Installer.Presenter;
-using System.Windows.Controls;
 using System.Windows;
+using System.Windows.Controls;
 
 namespace Installer.View
 {
-    public interface IProgressView
-    {
-        void UpdateProgress(double progress);
-        void CompleteInstallation();
-    }
-
-    public partial class ProgressView : System.Windows.Controls.UserControl, IProgressView
+    public partial class ProgressView : System.Windows.Controls.UserControl
     {
         private ProgressPresenter _presenter;
 
@@ -37,10 +31,9 @@ namespace Installer.View
             DoneButton.Visibility = Visibility.Visible;
         }
 
-        public void DoneButtonClicked(object sender, RoutedEventArgs e)
+        private void DoneButtonClicked(object sender, RoutedEventArgs e)
         {
             System.Windows.Application.Current.Shutdown();
         }
     }
 }
-

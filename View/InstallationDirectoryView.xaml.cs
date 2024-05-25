@@ -4,15 +4,7 @@ using Installer.Presenter;
 
 namespace Installer.View
 {
-    public interface IInstallationDirectoryView
-    {
-        void SetDirectoryPath(string path);
-        string GetDirectoryPath();
-        void ShowMessage(string message);
-        void NavigateToProgressView(string targetDirectory);
-    }
-
-    public partial class InstallationDirectoryView : System.Windows.Controls.UserControl, IInstallationDirectoryView
+    public partial class InstallationDirectoryView : System.Windows.Controls.UserControl
     {
         private Frame _mainFrame;
         private InstallationDirectoryPresenter _presenter;
@@ -59,5 +51,6 @@ namespace Installer.View
         }
     }
 }
+
 
 
