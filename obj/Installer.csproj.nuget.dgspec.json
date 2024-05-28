@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dy97v\\Desktop\\Installer\\Installer.csproj": {}
+    "C:\\Users\\valentindyr\\Desktop\\project\\Installer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dy97v\\Desktop\\Installer\\Installer.csproj": {
+    "C:\\Users\\valentindyr\\Desktop\\project\\Installer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dy97v\\Desktop\\Installer\\Installer.csproj",
+        "projectUniqueName": "C:\\Users\\valentindyr\\Desktop\\project\\Installer.csproj",
         "projectName": "Installer",
-        "projectPath": "C:\\Users\\dy97v\\Desktop\\Installer\\Installer.csproj",
-        "packagesPath": "C:\\Users\\dy97v\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dy97v\\Desktop\\Installer\\obj\\",
+        "projectPath": "C:\\Users\\valentindyr\\Desktop\\project\\Installer.csproj",
+        "packagesPath": "C:\\Users\\valentindyr\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\valentindyr\\Desktop\\project\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\dy97v\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\valentindyr\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -48,6 +48,14 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "Microsoft.NET.ILLink.Tasks": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.2, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -59,6 +67,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+              "version": "[8.0.2, 8.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Runtime.win-x64",
+              "version": "[8.0.2, 8.0.2]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+              "version": "[8.0.2, 8.0.2]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
@@ -67,7 +89,12 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300-preview.24203.14/PortableRuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
         }
       }
     }

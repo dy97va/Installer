@@ -14,6 +14,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Installer
-build_property.ProjectDir = C:\Users\dy97v\Desktop\Installer\
+build_property.ProjectDir = C:\Users\valentindyr\Desktop\project\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

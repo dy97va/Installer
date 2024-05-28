@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Installer</id>
+    <version>1.0.0</version>
+    <authors>Installer</authors>
+    <description>Package Description</description>
+    <repository type="git" commit="962b27fb77a00709e9b5e481865a925f9f77aaef" />
+    <dependencies>
+      <group targetFramework="net8.0-windows7.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0-windows7.0">
+        <frameworkReference name="Microsoft.WindowsDesktop.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\valentindyr\Desktop\project\bin\AnyCPUx64\Debug\net8.0-windows\win-x64\Installer.runtimeconfig.json" target="lib\net8.0-windows7.0\Installer.runtimeconfig.json" />
+    <file src="C:\Users\valentindyr\Desktop\project\bin\AnyCPUx64\Debug\net8.0-windows\win-x64\Installer.dll" target="lib\net8.0-windows7.0\Installer.dll" />
+  </files>
+</package>

@@ -1,0 +1,2 @@
+C:\Users\valentindyr\Desktop\project\bin\Debug\net8.0-windows\win-x86\publish\Installer.pdb
+C:\Users\valentindyr\Desktop\project\bin\Debug\net8.0-windows\win-x86\publish\Installer.exe

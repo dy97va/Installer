@@ -16,8 +16,8 @@ namespace Installer.Model
 
         public InstallationModel(string targetDirectory)
         {
-            string exeDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            _sourceDirectory = Path.Combine(exeDirectory, "Folder");
+            string exeDirectory = System.IO.Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+            _sourceDirectory = Path.Combine(exeDirectory, "Tiedostot");
             _targetDirectory = targetDirectory;
             _files = Directory.GetFiles(_sourceDirectory, "*.*", SearchOption.AllDirectories);
             _currentFileIndex = 0;
@@ -40,7 +40,7 @@ namespace Installer.Model
                 Progress = (double)_currentFileIndex / _files.Length * 100;
                 ProgressUpdate?.Invoke(this, EventArgs.Empty);
 
-               await Task.Delay(500); // Delay to check if progress bar UI updates, delete or comment out before submitting the task
+                await Task.Delay(500); // Delay to check if progress bar UI updates, delete or comment out before submitting the task
             }
 
             InstallationComplete?.Invoke(this, EventArgs.Empty);

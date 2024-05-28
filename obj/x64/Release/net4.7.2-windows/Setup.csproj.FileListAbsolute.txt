@@ -1,0 +1,8 @@
+C:\Users\valentindyr\Desktop\project\obj\x64\Release\net4.7.2-windows\Setup.csproj.AssemblyReference.cache
+C:\Users\valentindyr\Desktop\project\obj\x64\Release\net4.7.2-windows\View\InstallationDirectoryView.g.cs
+C:\Users\valentindyr\Desktop\project\obj\x64\Release\net4.7.2-windows\View\MainWindow.g.cs
+C:\Users\valentindyr\Desktop\project\obj\x64\Release\net4.7.2-windows\View\ProgressView.g.cs
+C:\Users\valentindyr\Desktop\project\obj\x64\Release\net4.7.2-windows\View\WelcomeView.g.cs
+C:\Users\valentindyr\Desktop\project\obj\x64\Release\net4.7.2-windows\App.g.cs
+C:\Users\valentindyr\Desktop\project\obj\x64\Release\net4.7.2-windows\Setup_MarkupCompile.cache
+C:\Users\valentindyr\Desktop\project\obj\x64\Release\net4.7.2-windows\Setup_MarkupCompile.lref

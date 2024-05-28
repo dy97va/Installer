@@ -1,0 +1,5 @@
+C:\Users\valentindyr\Desktop\Installer.exe
+C:\Users\valentindyr\Desktop\Installer.dll
+C:\Users\valentindyr\Desktop\Installer.deps.json
+C:\Users\valentindyr\Desktop\Installer.runtimeconfig.json
+C:\Users\valentindyr\Desktop\Installer.pdb
