@@ -1,5 +1,6 @@
 ﻿using System.IO;
-using System.Reflection;
+using System;
+using System.Threading.Tasks;
 
 namespace Installer.Model
 {
@@ -23,7 +24,6 @@ namespace Installer.Model
             _currentFileIndex = 0;
             Progress = 0;
         }
-
         public async Task CopyNextFileAsync()
         {
             while (_currentFileIndex < _files.Length)
@@ -34,8 +34,19 @@ namespace Installer.Model
                 string targetDirectory = Path.GetDirectoryName(targetFilePath);
                 Directory.CreateDirectory(targetDirectory);
 
-                byte[] fileContents = await File.ReadAllBytesAsync(sourceFilePath);
-                await File.WriteAllBytesAsync(targetFilePath, fileContents);
+                // Use synchronous methods for reading and writing files
+                byte[] fileContents;
+                using (FileStream sourceStream = new FileStream(sourceFilePath, FileMode.Open, FileAccess.Read, FileShare.Read))
+                {
+                    fileContents = new byte[sourceStream.Length];
+                    await sourceStream.ReadAsync(fileContents, 0, (int)sourceStream.Length);
+                }
+
+                using (FileStream targetStream = new FileStream(targetFilePath, FileMode.Create, FileAccess.Write, FileShare.None))
+                {
+                    await targetStream.WriteAsync(fileContents, 0, fileContents.Length);
+                }
+
                 _currentFileIndex++;
                 Progress = (double)_currentFileIndex / _files.Length * 100;
                 ProgressUpdate?.Invoke(this, EventArgs.Empty);
@@ -45,5 +56,6 @@ namespace Installer.Model
 
             InstallationComplete?.Invoke(this, EventArgs.Empty);
         }
+
     }
 }
